@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_43bc87b3b2edab2"
   },
   "dependencies": {
     "next": "14.0.4",
@@ -16,6 +17,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@storybook/addon-designs": "^7.0.7",
     "@storybook/addon-essentials": "^8.0.0-alpha.6",
     "@storybook/addon-interactions": "^8.0.0-alpha.6",
     "@storybook/addon-links": "^8.0.0-alpha.6",
@@ -25,6 +27,7 @@
     "@storybook/react": "^8.0.0-alpha.6",
     "@storybook/test": "^8.0.0-alpha.6",
     "autoprefixer": "^10.0.1",
+    "chromatic": "^10.2.0",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "postcss": "^8",
@@ -113,5 +116,7 @@
     "sb": "8.0.0-alpha.6",
     "storybook": "8.0.0-alpha.6",
     "jackspeak": "2.1.1"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "before-storybook@0.1.0"
 }
