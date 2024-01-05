@@ -1,22 +1,72 @@
-import { Button } from './Button';
+import React from 'react';
+import PropTypes from 'prop-types';
+import './button.css';
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
+/**
+ * Primary UI component for user interaction
+ */
+export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
+  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  return (
+    <button
+      type="button"
+      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      {...props}
+    >
+      {label}
+      <style jsx>{`
+        button {
+          background-color: ${backgroundColor};
+        }
+      `}</style>
+    </button>
+  );
+};
+
+Button.propTypes = {
+  /**
+   * Is this the principal call to action on the page?
+   */
+  primary: PropTypes.bool,
+  /**
+   * What background color to use
+   */
+  backgroundColor: PropTypes.string,
+  /**
+   * How large should the button be?
+   */
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  /**
+   * Button contents
+   */
+  label: PropTypes.string.isRequired,
+  /**
+   * Optional click handler
+   */
+  onClick: PropTypes.func,
+};
+
+Button.defaultProps = {
+  backgroundColor: null,
+  primary: false,
+  size: 'medium',
+  onClick: undefined,
+};
+
+// Storybook metadata for the Button component
 export default {
   title: 'Example/Button',
   component: Button,
   parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
   },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },
   },
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+// Storybook stories with different variations of the Button component
 export const Primary = {
   args: {
     primary: true,
@@ -41,5 +91,15 @@ export const Small = {
   args: {
     size: 'small',
     label: 'Button',
+  },
+};
+
+// Additional Storybook metadata and story
+export const myStory = {
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/zgujqRz7dRZAkhjkZtwcLq/Design-Tokens-(POC)?type=design&node-id=59%3A6054&mode=design&t=sYKRl4Fi8HCsrrwV-1',
+    },
   },
 };
