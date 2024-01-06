@@ -1709,7 +1709,7 @@
     "@storybook/addon-highlight" "8.0.0-alpha.6"
     axe-core "^4.2.0"
 
-"@storybook/addon-actions@8.0.0-alpha.6":
+"@storybook/addon-actions@7.6.7", "@storybook/addon-actions@8.0.0-alpha.6":
   version "8.0.0-alpha.6"
   resolved "https://registry.npmjs.org/@storybook/addon-actions/-/addon-actions-8.0.0-alpha.6.tgz"
   integrity sha512-hzp3iz2L5Ka2tl3U/t+T+pp8XcbWtv8HWoQBk0Dr4zfrh/HE8QGo2SZDB7fgh0VTvIvhQoxzX/RjjlmIdyzBlQ==
@@ -1721,7 +1721,7 @@
     polished "^4.2.2"
     uuid "^9.0.0"
 
-"@storybook/addon-backgrounds@8.0.0-alpha.6":
+"@storybook/addon-backgrounds@7.6.7", "@storybook/addon-backgrounds@8.0.0-alpha.6":
   version "8.0.0-alpha.6"
   resolved "https://registry.npmjs.org/@storybook/addon-backgrounds/-/addon-backgrounds-8.0.0-alpha.6.tgz"
   integrity sha512-LqDANuMoi6wLMRs0Xpr8eUzYPd9AhHsAlf0EjWB4zVLwNxGclrYARi3QlnK5rjVu/BHBRmQehirUfjqhh9OmdQ==
@@ -1731,7 +1731,7 @@
     memoizerific "^1.11.3"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-controls@8.0.0-alpha.6":
+"@storybook/addon-controls@7.6.7", "@storybook/addon-controls@8.0.0-alpha.6":
   version "8.0.0-alpha.6"
   resolved "https://registry.npmjs.org/@storybook/addon-controls/-/addon-controls-8.0.0-alpha.6.tgz"
   integrity sha512-neMeGF6rprXf+A323gsynkz95huXOiaZmTmHqyuLZEuStHhZZ1kfF4Ew68t0J7jJvVJ+H/8n8otaRPKOYAOl8w==
@@ -1747,7 +1747,7 @@
   dependencies:
     "@figspec/react" "^1.0.0"
 
-"@storybook/addon-docs@8.0.0-alpha.6":
+"@storybook/addon-docs@7.6.7", "@storybook/addon-docs@8.0.0-alpha.6":
   version "8.0.0-alpha.6"
   resolved "https://registry.npmjs.org/@storybook/addon-docs/-/addon-docs-8.0.0-alpha.6.tgz"
   integrity sha512-nlIdF5zqkUJevG8h8BpXXNvJXzzFIrKgMCpT/DerqEBdornK/1RPm/w6QNpISBR+Sm8FCGPUS9ungvjudk8E4Q==
@@ -1773,7 +1773,7 @@
     remark-slug "^6.0.0"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-essentials@8.0.0-alpha.6", "@storybook/addon-essentials@^8.0.0-alpha.6":
+"@storybook/addon-essentials@8.0.0-alpha.6":
   version "8.0.0-alpha.6"
   resolved "https://registry.yarnpkg.com/@storybook/addon-essentials/-/addon-essentials-8.0.0-alpha.6.tgz#dedc88cc7f41bd027b3d0065ac5de466e3b125ff"
   integrity sha512-cvKL/Sgv9Nr1fR7Gc0PH4s9sNA1nyRvEgUZ92eK6+qPfsp2JHOJZEoofvWWXIwZdGvnJUTx9GkwABtMRhwyCWg==
@@ -1793,7 +1793,27 @@
     "@storybook/preview-api" "8.0.0-alpha.6"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-highlight@8.0.0-alpha.6":
+"@storybook/addon-essentials@^7.6.7":
+  version "7.6.7"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-essentials/-/addon-essentials-7.6.7.tgz#6de31f175b0771739ec56dcf445dee0535f1847c"
+  integrity sha512-nNLMrpIvc04z4XCA+kval/44eKAFJlUJeeL2pxwP7F/PSzjWe5BXv1bQHOiw8inRO5II0PzqwWnVCI9jsj7K5A==
+  dependencies:
+    "@storybook/addon-actions" "7.6.7"
+    "@storybook/addon-backgrounds" "7.6.7"
+    "@storybook/addon-controls" "7.6.7"
+    "@storybook/addon-docs" "7.6.7"
+    "@storybook/addon-highlight" "7.6.7"
+    "@storybook/addon-measure" "7.6.7"
+    "@storybook/addon-outline" "7.6.7"
+    "@storybook/addon-toolbars" "7.6.7"
+    "@storybook/addon-viewport" "7.6.7"
+    "@storybook/core-common" "7.6.7"
+    "@storybook/manager-api" "7.6.7"
+    "@storybook/node-logger" "7.6.7"
+    "@storybook/preview-api" "7.6.7"
+    ts-dedent "^2.0.0"
+
+"@storybook/addon-highlight@7.6.7", "@storybook/addon-highlight@8.0.0-alpha.6":
   version "8.0.0-alpha.6"
   resolved "https://registry.npmjs.org/@storybook/addon-highlight/-/addon-highlight-8.0.0-alpha.6.tgz"
   integrity sha512-B8wnmosTQ7CR8cW17NGAlny2XD3Ixg80G1geC3FelrJ61VKz2SiWkvGAIin0cWY7kpaP8bh4QOxDUeT+5epbKQ==
@@ -1840,7 +1860,7 @@
     remark-gfm "^3.0.1"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-measure@8.0.0-alpha.6":
+"@storybook/addon-measure@7.6.7", "@storybook/addon-measure@8.0.0-alpha.6":
   version "8.0.0-alpha.6"
   resolved "https://registry.npmjs.org/@storybook/addon-measure/-/addon-measure-8.0.0-alpha.6.tgz"
   integrity sha512-wRn79JAcLZqBVnzhIagV5MJDXhBe21S8E+TmuoLnh9mSJd/Tp++QO+ONVZ+z3nZ+o6NwcRfxBHiK9rc9LuS/KQ==
@@ -1857,7 +1877,7 @@
     "@storybook/telemetry" "^7.1.0"
     react-confetti "^6.1.0"
 
-"@storybook/addon-outline@8.0.0-alpha.6":
+"@storybook/addon-outline@7.6.7", "@storybook/addon-outline@8.0.0-alpha.6":
   version "8.0.0-alpha.6"
   resolved "https://registry.npmjs.org/@storybook/addon-outline/-/addon-outline-8.0.0-alpha.6.tgz"
   integrity sha512-ht5sQOm5ouWkJ9NsS9mY9mqbupKh6jDDL6/7igl/bJGcCObhwth4xgNDAeKysrcrvbimc/v+/bYl0AXO2UABVA==
@@ -1882,12 +1902,12 @@
   dependencies:
     ts-dedent "^2.0.0"
 
-"@storybook/addon-toolbars@8.0.0-alpha.6":
+"@storybook/addon-toolbars@7.6.7", "@storybook/addon-toolbars@8.0.0-alpha.6":
   version "8.0.0-alpha.6"
   resolved "https://registry.npmjs.org/@storybook/addon-toolbars/-/addon-toolbars-8.0.0-alpha.6.tgz"
   integrity sha512-Sbka5sypOLooQK8QMgsiqjRgW+z+fF+7C+7s0HKMpAoN2A+Ny3opcJkGxINy8Mwruerc8jZgVEjpS1+ZQAGS4A==
 
-"@storybook/addon-viewport@8.0.0-alpha.6":
+"@storybook/addon-viewport@7.6.7", "@storybook/addon-viewport@8.0.0-alpha.6":
   version "8.0.0-alpha.6"
   resolved "https://registry.npmjs.org/@storybook/addon-viewport/-/addon-viewport-8.0.0-alpha.6.tgz"
   integrity sha512-bkheJxDlLC+GGheIA3k56Tn8ABUZpfwj1TFXoYxp3AzPCw8zKxe5IaYZOTJIl/FM9MjL2RqWcpYuchG5WleIYA==
@@ -2143,7 +2163,7 @@
     memoizerific "^1.11.3"
     util-deprecate "^1.0.2"
 
-"@storybook/core-common@8.0.0-alpha.6":
+"@storybook/core-common@7.6.7", "@storybook/core-common@8.0.0-alpha.6":
   version "8.0.0-alpha.6"
   resolved "https://registry.npmjs.org/@storybook/core-common/-/core-common-8.0.0-alpha.6.tgz"
   integrity sha512-ITt/NKsQ1ALUr85EjbsrqlKCjTbtNUCJ5jEDtAzEG/2JXBpxiUVfLxcW8Nv+NUecIHLGpsPzlNlK81bOXdYOKQ==
@@ -2356,7 +2376,7 @@
     "@vitest/utils" "^0.34.6"
     util "^0.12.4"
 
-"@storybook/manager-api@8.0.0-alpha.6":
+"@storybook/manager-api@7.6.7", "@storybook/manager-api@8.0.0-alpha.6":
   version "8.0.0-alpha.6"
   resolved "https://registry.npmjs.org/@storybook/manager-api/-/manager-api-8.0.0-alpha.6.tgz"
   integrity sha512-KAR6Q7MQsvyu0/lnS8m9Ksk2rZefPeiM8f6qkKruG02790+KpfwTBVGYvF9gsiNxy6j8Q4ufIXkV4Zj3UvFPnA==
@@ -2433,7 +2453,7 @@
     tsconfig-paths "^4.0.0"
     tsconfig-paths-webpack-plugin "^4.0.1"
 
-"@storybook/node-logger@8.0.0-alpha.6":
+"@storybook/node-logger@7.6.7", "@storybook/node-logger@8.0.0-alpha.6":
   version "8.0.0-alpha.6"
   resolved "https://registry.npmjs.org/@storybook/node-logger/-/node-logger-8.0.0-alpha.6.tgz"
   integrity sha512-VlQU1fRZxp0IH5gGDeslRR1qBVlU9+PdjrxU0vhXdhbSAeWH65WBoLs2RrAjlELD+wpICHIJz9uUo/wFiDNKUw==
@@ -2575,7 +2595,7 @@
     babel-loader "^7.0.0 || ^8.0.0 || ^9.0.0"
     babel-plugin-bundled-import-meta "^0.3.1"
 
-"@storybook/preview-api@8.0.0-alpha.6":
+"@storybook/preview-api@7.6.7", "@storybook/preview-api@8.0.0-alpha.6":
   version "8.0.0-alpha.6"
   resolved "https://registry.npmjs.org/@storybook/preview-api/-/preview-api-8.0.0-alpha.6.tgz"
   integrity sha512-DJqpJWkAGIHzT2UKBgiubVhEEvEQOFYaQWP0YgJW/81KetmkR0giqUDT9kISvWdiFEWyYiY5Tl0nfuVoVtFMMQ==
