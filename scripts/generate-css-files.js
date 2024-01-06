@@ -18,7 +18,12 @@ function processCategory(category, path) {
         .replace(/^semantic\//, '')
         .replace(/^System\//, '')
         .replace(/-value$/, '');
-      cssContent += `--${sanitizedVariable}: ${value};\n`;
+
+      if (category.type !== 'System/global') {
+        // Reformat value for non-global variables
+        const globalVariable = category.value.replace(/{|}/g, '').replace(/\./g, '-').toLowerCase();
+        cssContent += `--${sanitizedVariable}: var(--global-${globalVariable});\n`;
+      }
     }
   });
 
@@ -28,14 +33,12 @@ function processCategory(category, path) {
 function getCSSFilePath(category) {
   if (category.startsWith('System/global')) {
     return `${cssFolderPath}global-styles.css`;
-  } else if (category.startsWith('System/typography')) {
-    return `${cssFolderPath}global-typography.css`;
   } else if (category.startsWith('semantic/light')) {
     return `${cssFolderPath}okta-light-theme.css`;
   } else if (category.startsWith('semantic/dark')) {
     return `${cssFolderPath}okta-dark-theme.css`;
   } else if (category.startsWith('semantic/other01')) {
-    return `${cssFolderPath}okta-alternate-theme.css`;
+    return `${cssFolderPath}okta-other01-theme.css`;
   } else {
     console.log(`Unsupported category: ${category}`);
     return null;
