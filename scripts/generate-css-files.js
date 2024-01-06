@@ -11,6 +11,11 @@ function processCategory(category, path, isGlobal) {
   Object.entries(category).forEach(([key, value]) => {
     const currentPath = path ? `${path}-${key}` : key;
 
+    // Skip processing if key starts with "$"
+    if (key.startsWith('$')) {
+      return;
+    }
+
     if (typeof value === 'object' && value !== null && !currentPath.startsWith('$')) {
       cssContent += processCategory(value, currentPath, isGlobal);
     } else if (key === 'value') {
@@ -58,7 +63,7 @@ Object.keys(topLevelCategory).forEach((category) => {
   const cssFilePath = getCSSFilePath(category);
 
   if (cssFilePath && cssContent.trim() !== '') {
-    // Import global-styles.css only if not global file
+    // Import global-styles.css only if not a global file
     const importStatement = isGlobal ? '' : `@import 'global-styles.css';\n`;
     fs.writeFileSync(cssFilePath, `${importStatement}:root {\n${cssContent}}\n`, { flag: 'w' });
     console.log(`CSS file written to: ${cssFilePath}`);

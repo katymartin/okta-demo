@@ -22,7 +22,6 @@
 --dark-color-interaction-on-default-primary-focus-surface: var(--global-colors-blue-400);
 --dark-color-interaction-on-default-primary-focus-content: var(--global-colors-neutral-25);
 --dark-color-interaction-on-default-primary-focus-border: var(--global-colors-blue-200);
---dark-color-interaction-on-default-primary-focus-border-$extensions-studio.tokens-modify: var(--global-0-33);
 --dark-color-interaction-on-default-primary-disabled-surface: var(--global-colors-gray-500);
 --dark-color-interaction-on-default-primary-disabled-content: var(--global-colors-gray-300);
 --dark-color-interaction-on-default-secondary-default-content: var(--global-colors-neutral-25);
@@ -34,7 +33,6 @@
 --dark-color-interaction-on-default-secondary-focus-content: var(--global-colors-blue-200);
 --dark-color-interaction-on-default-secondary-focus-border: var(--global-colors-blue-200);
 --dark-color-interaction-on-default-secondary-focus-outer: var(--global-colors-blue-200);
---dark-color-interaction-on-default-secondary-focus-outer-$extensions-studio.tokens-modify: var(--global-0-33);
 --dark-color-interaction-on-default-secondary-disabled-content: var(--global-colors-gray-500);
 --dark-color-interaction-on-default-secondary-disabled-border: var(--global-colors-gray-500);
 --dark-color-interaction-on-default-text-default-content: var(--global-colors-neutral-25);
@@ -52,7 +50,6 @@
 --dark-color-interaction-on-dark-primary-focus-surface: var(--global-colors-blue-400);
 --dark-color-interaction-on-dark-primary-focus-content: var(--global-colors-neutral-25);
 --dark-color-interaction-on-dark-primary-focus-border: var(--global-colors-blue-200);
---dark-color-interaction-on-dark-primary-focus-border-$extensions-studio.tokens-modify: var(--global-0-66);
 --dark-color-interaction-on-dark-primary-disabled-surface: var(--global-colors-gray-200);
 --dark-color-interaction-on-dark-primary-disabled-content: var(--global-colors-gray-300);
 --dark-color-interaction-on-dark-secondary-default-content: var(--global-colors-neutral-1000);
@@ -64,7 +61,6 @@
 --dark-color-interaction-on-dark-secondary-focus-content: var(--global-colors-blue-400);
 --dark-color-interaction-on-dark-secondary-focus-border: var(--global-colors-blue-400);
 --dark-color-interaction-on-dark-secondary-focus-outer: var(--global-colors-blue-200);
---dark-color-interaction-on-dark-secondary-focus-outer-$extensions-studio.tokens-modify: var(--global-0-66);
 --dark-color-interaction-on-dark-secondary-disabled-content: var(--global-colors-gray-200);
 --dark-color-interaction-on-dark-secondary-disabled-border: var(--global-colors-gray-200);
 --dark-color-interaction-on-dark-text-default-content: var(--global-colors-neutral-1000);
@@ -82,7 +78,6 @@
 --dark-color-interaction-on-light-primary-focus-surface: var(--global-colors-neutral-1000);
 --dark-color-interaction-on-light-primary-focus-content: var(--global-colors-neutral-25);
 --dark-color-interaction-on-light-primary-focus-border: var(--global-colors-neutral-25);
---dark-color-interaction-on-light-primary-focus-border-$extensions-studio.tokens-modify: var(--global-0-5);
 --dark-color-interaction-on-light-primary-disabled-surface: var(--global-colors-gray-200);
 --dark-color-interaction-on-light-primary-disabled-content: var(--global-colors-gray-50);
 --dark-color-interaction-on-light-secondary-default-content: var(--global-colors-neutral-1000);
@@ -94,7 +89,6 @@
 --dark-color-interaction-on-light-secondary-focus-content: var(--global-colors-neutral-1000);
 --dark-color-interaction-on-light-secondary-focus-border: var(--global-colors-neutral-1000);
 --dark-color-interaction-on-light-secondary-focus-outer: var(--global-colors-neutral-25);
---dark-color-interaction-on-light-secondary-focus-outer-$extensions-studio.tokens-modify: var(--global-0-5);
 --dark-color-interaction-on-light-secondary-disabled-content: var(--global-colors-gray-200);
 --dark-color-interaction-on-light-secondary-disabled-border: var(--global-colors-gray-200);
 --dark-color-interaction-on-light-text-default-content: var(--global-colors-neutral-1000);
@@ -102,7 +96,6 @@
 --dark-color-interaction-on-light-text-active-content: var(--global-colors-gray-1000);
 --dark-color-interaction-on-light-text-focus-content: var(--global-colors-neutral-1000);
 --dark-color-interaction-on-light-text-focus-border: var(--global-colors-neutral-25);
---dark-color-interaction-on-light-text-focus-border-$extensions-studio.tokens-modify: var(--global-0-5);
 --dark-color-interaction-on-light-text-disabled-content: var(--global-colors-gray-200);
 --dark-color-interaction-on-other-primary-default-surface: var(--global-colors-neutral-25);
 --dark-color-interaction-on-other-primary-default-content: var(--global-colors-neutral-1000);
@@ -113,7 +106,6 @@
 --dark-color-interaction-on-other-primary-focus-surface: var(--global-colors-neutral-25);
 --dark-color-interaction-on-other-primary-focus-content: var(--global-colors-neutral-1000);
 --dark-color-interaction-on-other-primary-focus-border: var(--global-colors-neutral-25);
---dark-color-interaction-on-other-primary-focus-border-$extensions-studio.tokens-modify: var(--global-0-5);
 --dark-color-interaction-on-other-primary-disabled-surface: var(--global-colors-gray-500);
 --dark-color-interaction-on-other-primary-disabled-content: var(--global-colors-gray-600);
 --dark-color-interaction-on-other-secondary-default-content: var(--global-colors-neutral-25);
@@ -125,7 +117,6 @@
 --dark-color-interaction-on-other-secondary-focus-content: var(--global-colors-neutral-25);
 --dark-color-interaction-on-other-secondary-focus-border: var(--global-colors-neutral-25);
 --dark-color-interaction-on-other-secondary-focus-outer: var(--global-colors-neutral-25);
---dark-color-interaction-on-other-secondary-focus-outer-$extensions-studio.tokens-modify: var(--global-0-5);
 --dark-color-interaction-on-other-secondary-disabled-content: var(--global-colors-gray-500);
 --dark-color-interaction-on-other-secondary-disabled-border: var(--global-colors-gray-500);
 --dark-color-interaction-on-other-text-default-content: var(--global-colors-neutral-25);
@@ -133,6 +124,5 @@
 --dark-color-interaction-on-other-text-active-content: var(--global-colors-neutral-100);
 --dark-color-interaction-on-other-text-focus-content: var(--global-colors-neutral-25);
 --dark-color-interaction-on-other-text-focus-border: var(--global-colors-neutral-25);
---dark-color-interaction-on-other-text-focus-border-$extensions-studio.tokens-modify: var(--global-0-5);
 --dark-color-interaction-on-other-text-disabled-content: var(--global-colors-gray-500);
 }
