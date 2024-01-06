@@ -5,23 +5,26 @@ const cssFolderPath = '/Users/katy.martin01/Documents/GitHub/okta-demo/public/cs
 
 const json = require(jsonPath);
 
-function processCategory(category, path) {
+function processCategory(category, path, isGlobal) {
   let cssContent = '';
 
   Object.entries(category).forEach(([key, value]) => {
     const currentPath = path ? `${path}-${key}` : key;
 
     if (typeof value === 'object' && value !== null && !currentPath.startsWith('$')) {
-      cssContent += processCategory(value, currentPath);
+      cssContent += processCategory(value, currentPath, isGlobal);
     } else if (key === 'value') {
       const sanitizedVariable = currentPath
         .replace(/^semantic\//, '')
         .replace(/^System\//, '')
         .replace(/-value$/, '');
 
-      if (category.type !== 'System/global') {
+      if (isGlobal) {
+        // Write value directly for global variables
+        cssContent += `--${sanitizedVariable}: ${value};\n`;
+      } else {
         // Reformat value for non-global variables
-        const globalVariable = category.value.replace(/{|}/g, '').replace(/\./g, '-').toLowerCase();
+        const globalVariable = value.replace(/{|}/g, '').replace(/\./g, '-').toLowerCase();
         cssContent += `--${sanitizedVariable}: var(--global-${globalVariable});\n`;
       }
     }
@@ -50,7 +53,8 @@ const topLevelCategory = Array.isArray(json) ? json[0] : json;
 
 // Iterate over each top-level category and write to the corresponding file
 Object.keys(topLevelCategory).forEach((category) => {
-  const cssContent = processCategory(topLevelCategory[category], category);
+  const isGlobal = category.startsWith('System/global');
+  const cssContent = processCategory(topLevelCategory[category], category, isGlobal);
   const cssFilePath = getCSSFilePath(category);
 
   if (cssFilePath && cssContent.trim() !== '') {
