@@ -39,9 +39,9 @@ function getCSSFilePath(category) {
   } else if (category.startsWith('semantic/light')) {
     return `${cssFolderPath}okta-light-theme.css`;
   } else if (category.startsWith('semantic/dark')) {
-    return `${cssFolderPath}okta-dark-theme.css`;
+    return `${cssFolderPath}auth0-dark-theme.css`;
   } else if (category.startsWith('semantic/other01')) {
-    return `${cssFolderPath}okta-other01-theme.css`;
+    return `${cssFolderPath}other01-theme.css`;
   } else {
     console.log(`Unsupported category: ${category}`);
     return null;
