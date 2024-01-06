@@ -1,3 +1,4 @@
+@import 'global-styles.css';
 :root {
 --dark-color-surface-primary: var(--global-colors-gray-1000);
 --dark-color-surface-secondary: var(--global-colors-gray-800);

@@ -1,3 +1,4 @@
+@import 'global-styles.css';
 :root {
 --light-color-surface-primary: var(--global-colors-neutral-25);
 --light-color-surface-secondary: var(--global-colors-neutral-100);

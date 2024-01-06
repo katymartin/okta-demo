@@ -58,7 +58,9 @@ Object.keys(topLevelCategory).forEach((category) => {
   const cssFilePath = getCSSFilePath(category);
 
   if (cssFilePath && cssContent.trim() !== '') {
-    fs.writeFileSync(cssFilePath, `:root {\n${cssContent}}\n`, { flag: 'w' });
+    // Import global-styles.css only if not global file
+    const importStatement = isGlobal ? '' : `@import 'global-styles.css';\n`;
+    fs.writeFileSync(cssFilePath, `${importStatement}:root {\n${cssContent}}\n`, { flag: 'w' });
     console.log(`CSS file written to: ${cssFilePath}`);
   }
 });
