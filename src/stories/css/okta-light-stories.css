@@ -1,3 +1,5 @@
+@import '../../../public/css/okta-light-theme.css';
+
 /***********************
     Buttons
 ***********************/
@@ -12,8 +14,8 @@
     line-height: 1;
 }
 .storybook-button--primary {
-  color: pink;
-  background-color: green;
+  color: var(--light-color-surface-secondary);
+  background-color: var(--light-color-interaction-on-default-text-default-content);
 }
 .storybook-button--secondary {
   color: #333;

@@ -26,11 +26,11 @@ function processCategory(category, path, isGlobal) {
 
       if (isGlobal) {
         // Write value directly for global variables
-        cssContent += `--${sanitizedVariable}: ${value};\n`;
+        cssContent += `--${sanitizedVariable.toLowerCase()}: ${value};\n`;
       } else {
         // Reformat value for non-global variables
         const globalVariable = value.replace(/{|}/g, '').replace(/\./g, '-').toLowerCase();
-        cssContent += `--${sanitizedVariable}: var(--global-${globalVariable});\n`;
+        cssContent += `--${sanitizedVariable.toLowerCase()}: var(--global-${globalVariable});\n`;
       }
     }
   });
