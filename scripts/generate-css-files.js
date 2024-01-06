@@ -14,16 +14,15 @@ function processCategory(category, path) {
     if (typeof value === 'object' && value !== null && !currentPath.startsWith('$')) {
       cssContent += processCategory(value, currentPath);
     } else if (key === 'value') {
-      cssContent += writeCSSVariable(currentPath, value);
+      const sanitizedVariable = currentPath
+        .replace(/^semantic\//, '')
+        .replace(/^System\//, '')
+        .replace(/-value$/, '');
+      cssContent += `--${sanitizedVariable}: ${value};\n`;
     }
   });
 
   return cssContent;
-}
-
-function writeCSSVariable(variable, value) {
-  let sanitizedVariable = variable.replace(/^semantic\//, '').replace(/^System\//, '');
-  return `--${sanitizedVariable}: ${value};\n`;
 }
 
 function getCSSFilePath(category) {
