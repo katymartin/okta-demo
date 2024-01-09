@@ -42,11 +42,11 @@ function getCSSFilePath(category) {
   if (category.startsWith('System/global')) {
     return `${cssFolderPath}global-styles.css`;
   } else if (category.startsWith('semantic/light')) {
-    return `${cssFolderPath}okta-light-theme.css`;
+    return `${cssFolderPath}okta-theme.css`;
   } else if (category.startsWith('semantic/dark')) {
-    return `${cssFolderPath}auth0-dark-theme.css`;
+    return `${cssFolderPath}devx-theme.css`;
   } else if (category.startsWith('semantic/other01')) {
-    return `${cssFolderPath}other01-theme.css`;
+    return `${cssFolderPath}oktane-theme.css`;
   } else {
     console.log(`Unsupported category: ${category}`);
     return null;
