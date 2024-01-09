@@ -1,3 +1,4 @@
+
 :root {
 --global-colors-blue-25: #FAFBFF;
 --global-colors-blue-50: #E3EBFF;
@@ -171,6 +172,7 @@
 --global-line-height-160: 160%;
 --global-font-weight-400: 400;
 --global-font-weight-500: 500;
+--global-font-weight-600: 600;
 --global-letter-spacing-0: 0%;
 --global-letter-spacing-1: 1%;
 --global-letter-spacing-10: 10%;
@@ -181,4 +183,5 @@
 --global-letter-spacing-pt5: 0.5%;
 --global-letter-spacing-1pt25: 1.25%;
 --global-letter-spacing-1pt5: 1.5%;
+
 }

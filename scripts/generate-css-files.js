@@ -41,11 +41,11 @@ function processCategory(category, path, isGlobal) {
 function getCSSFilePath(category) {
   if (category.startsWith('System/global')) {
     return `${cssFolderPath}global-styles.css`;
-  } else if (category.startsWith('semantic/light')) {
+  } else if (category.startsWith('semantic/okta')) {
     return `${cssFolderPath}okta-theme.css`;
-  } else if (category.startsWith('semantic/dark')) {
+  } else if (category.startsWith('semantic/devx')) {
     return `${cssFolderPath}devx-theme.css`;
-  } else if (category.startsWith('semantic/other01')) {
+  } else if (category.startsWith('semantic/oktane')) {
     return `${cssFolderPath}oktane-theme.css`;
   } else {
     console.log(`Unsupported category: ${category}`);
@@ -65,7 +65,7 @@ Object.keys(topLevelCategory).forEach((category) => {
   if (cssFilePath && cssContent.trim() !== '') {
     // Import global-styles.css only if not a global file
     const importStatement = isGlobal ? '' : `@import 'global-styles.css';\n`;
-    fs.writeFileSync(cssFilePath, `${importStatement}:root {\n${cssContent}}\n`, { flag: 'w' });
+    fs.writeFileSync(cssFilePath, `${importStatement}\n:root {\n${cssContent}\n}\n`, { flag: 'w' });
     console.log(`CSS file written to: ${cssFilePath}`);
   }
 });
