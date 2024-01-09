@@ -41,13 +41,14 @@ function processCategory(category, path, isGlobal) {
 function getCSSFilePath(category) {
   if (category.startsWith('System/global')) {
     return `${cssFolderPath}global-styles.css`;
-  } else if (category.startsWith('semantic/okta')) {
+  } else if (category.startsWith('semantic/oktane')) {
+    return `${cssFolderPath}oktane-theme.css`;
+  }
+  else if (category.startsWith('semantic/okta')) {
     return `${cssFolderPath}okta-theme.css`;
   } else if (category.startsWith('semantic/devx')) {
     return `${cssFolderPath}devx-theme.css`;
-  } else if (category.startsWith('semantic/oktane')) {
-    return `${cssFolderPath}oktane-theme.css`;
-  } else {
+  }  else {
     console.log(`Unsupported category: ${category}`);
     return null;
   }
