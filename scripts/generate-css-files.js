@@ -26,11 +26,11 @@ function processCategory(category, path, isGlobal) {
 
       if (isGlobal) {
         // Write value directly for global variables
-        cssContent += `--${sanitizedVariable}: ${value};\n`;
+        cssContent += `--${sanitizedVariable.toLowerCase()}: ${value};\n`;
       } else {
         // Reformat value for non-global variables
         const globalVariable = value.replace(/{|}/g, '').replace(/\./g, '-').toLowerCase();
-        cssContent += `--${sanitizedVariable}: var(--global-${globalVariable});\n`;
+        cssContent += `--${sanitizedVariable.toLowerCase()}: var(--global-${globalVariable});\n`;
       }
     }
   });
@@ -42,11 +42,11 @@ function getCSSFilePath(category) {
   if (category.startsWith('System/global')) {
     return `${cssFolderPath}global-styles.css`;
   } else if (category.startsWith('semantic/light')) {
-    return `${cssFolderPath}okta-light-theme.css`;
+    return `${cssFolderPath}okta-theme.css`;
   } else if (category.startsWith('semantic/dark')) {
-    return `${cssFolderPath}auth0-dark-theme.css`;
+    return `${cssFolderPath}devx-theme.css`;
   } else if (category.startsWith('semantic/other01')) {
-    return `${cssFolderPath}other01-theme.css`;
+    return `${cssFolderPath}oktane-theme.css`;
   } else {
     console.log(`Unsupported category: ${category}`);
     return null;
