@@ -47,7 +47,7 @@ function processTypography(displayObj, displayKey) {
 }
 
 function writeTypographyMixinsToFile(cssContent) {
-  const mixinsFilePath = `${cssFolderPath}typography-theme.css`;
+  const mixinsFilePath = `${cssFolderPath}global-typography.css`;
 
   if (cssContent.trim() !== '') {
     const importStatement = `@import 'global-styles.css';\n`;
@@ -89,8 +89,6 @@ function processCategory(category, path, isGlobal) {
 function getCSSFilePath(category) {
   if (category.startsWith('System/global')) {
     return `${cssFolderPath}global-styles.css`;
-  } else if (category.startsWith('System/typography')) {
-    return `${cssFolderPath}typography-theme.css`;
   } else if (category.startsWith('semantic/oktane')) {
     return `${cssFolderPath}oktane-theme.css`;
   } else if (category.startsWith('semantic/okta')) {
