@@ -5,13 +5,63 @@ const cssFolderPath = '/Users/katy.martin01/Documents/GitHub/okta-demo/public/cs
 
 const json = require(jsonPath);
 
+function processTypographyValues(values) {
+  let cssContent = '';
+
+  Object.entries(values).forEach(([property, value]) => {
+    const kebabCaseProperty = property.replace(/[A-Z]/g, match => `-${match.toLowerCase()}`);
+    const sanitizedValue = value.replace(/{|}/g, '').replace(/\./g, '-').toLowerCase();
+
+    cssContent += `  ${kebabCaseProperty}: var(--global-${sanitizedValue});\n`;
+  });
+
+  return cssContent;
+}
+
+function processTypography(displayObj, displayKey) {
+  let cssContent = '';
+
+  Object.entries(displayObj).forEach(([key, value]) => {
+    if (key === 'value') {
+      cssContent += processTypographyValues(value);
+    } else if (typeof value === 'object') {
+      if (displayKey.toLowerCase() === 'desktop') {
+        cssContent += `@media screen and (min-width: 1312px) {\n${processTypography(value, key)}\n}\n`;
+      } else if (displayKey.toLowerCase() === 'tablet') {
+        cssContent += `@media screen and (max-width: 1311px) {\n${processTypography(value, key)}\n}\n`;
+      } else if (displayKey.toLowerCase() === 'mobile') {
+        cssContent += `@media screen and (max-width: 834px) {\n${processTypography(value, key)}\n}\n`;
+      } else {
+        cssContent += processTypography(value, key);
+      }
+    }
+  });
+
+  const lowercaseKey = displayKey.toLowerCase();
+
+  if (lowercaseKey !== 'device' && lowercaseKey !== 'display' && lowercaseKey !== 'desktop' && lowercaseKey !== 'tablet' && lowercaseKey !== 'mobile') {
+    cssContent = `@mixin ${lowercaseKey} {\n${cssContent}}\n\n`;
+  }
+
+  return cssContent;
+}
+
+function writeTypographyMixinsToFile(cssContent) {
+  const mixinsFilePath = `${cssFolderPath}typography-theme.css`;
+
+  if (cssContent.trim() !== '') {
+    const importStatement = `@import 'global-styles.css';\n`;
+    fs.writeFileSync(mixinsFilePath, `/* Typography Mixins */\n${importStatement}\n${cssContent}`);
+    console.log(`Typography mixins written to: ${mixinsFilePath}`);
+  }
+}
+
 function processCategory(category, path, isGlobal) {
   let cssContent = '';
 
   Object.entries(category).forEach(([key, value]) => {
     const currentPath = path ? `${path}-${key}` : key;
 
-    // Skip processing if key starts with "$"
     if (key.startsWith('$')) {
       return;
     }
@@ -25,10 +75,8 @@ function processCategory(category, path, isGlobal) {
         .replace(/-value$/, '');
 
       if (isGlobal) {
-        // Write value directly for global variables
         cssContent += `--${sanitizedVariable.toLowerCase()}: ${value};\n`;
       } else {
-        // Reformat value for non-global variables
         const globalVariable = value.replace(/{|}/g, '').replace(/\./g, '-').toLowerCase();
         cssContent += `--${sanitizedVariable.toLowerCase()}: var(--global-${globalVariable});\n`;
       }
@@ -41,33 +89,47 @@ function processCategory(category, path, isGlobal) {
 function getCSSFilePath(category) {
   if (category.startsWith('System/global')) {
     return `${cssFolderPath}global-styles.css`;
-  } else if (category.startsWith('semantic/light')) {
-    return `${cssFolderPath}okta-theme.css`;
-  } else if (category.startsWith('semantic/dark')) {
-    return `${cssFolderPath}devx-theme.css`;
-  } else if (category.startsWith('semantic/other01')) {
+  } else if (category.startsWith('System/typography')) {
+    return `${cssFolderPath}typography-theme.css`;
+  } else if (category.startsWith('semantic/oktane')) {
     return `${cssFolderPath}oktane-theme.css`;
+  } else if (category.startsWith('semantic/okta')) {
+    return `${cssFolderPath}okta-theme.css`;
+  } else if (category.startsWith('semantic/devx')) {
+    return `${cssFolderPath}devx-theme.css`;
   } else {
     console.log(`Unsupported category: ${category}`);
     return null;
   }
 }
 
-// Start processing from the top-level categories
 const topLevelCategory = Array.isArray(json) ? json[0] : json;
 
-// Iterate over each top-level category and write to the corresponding file
 Object.keys(topLevelCategory).forEach((category) => {
   const isGlobal = category.startsWith('System/global');
   const cssContent = processCategory(topLevelCategory[category], category, isGlobal);
   const cssFilePath = getCSSFilePath(category);
 
   if (cssFilePath && cssContent.trim() !== '') {
-    // Import global-styles.css only if not a global file
     const importStatement = isGlobal ? '' : `@import 'global-styles.css';\n`;
-    fs.writeFileSync(cssFilePath, `${importStatement}:root {\n${cssContent}}\n`, { flag: 'w' });
+    fs.writeFileSync(cssFilePath, `${importStatement}\n:root {\n${cssContent}\n}\n`, { flag: 'w' });
     console.log(`CSS file written to: ${cssFilePath}`);
   }
 });
+
+// Process typography separately
+const typographyCategory = json['System/typography'];
+
+if (typographyCategory) {
+  let typographyContent = '';
+
+  Object.entries(typographyCategory).forEach(([displayKey, displayObj]) => {
+    typographyContent += processTypography(displayObj, displayKey);
+  });
+
+  writeTypographyMixinsToFile(typographyContent);
+} else {
+  console.log('Category "System/typography" not found in the JSON.');
+}
 
 console.log('Processing complete.');

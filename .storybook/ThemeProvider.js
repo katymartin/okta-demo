@@ -18,8 +18,8 @@ export const ThemeProvider = ({ children }) => {
   }, []);
 
   const themes = {
-    light: 'src/stories/css/okta-light-stories.css',
-    dark: 'src/stories/css/auth0-dark-stories.css',
+    light: 'src/stories/css/okta-stories.css',
+    dark: 'src/stories/css/devx-stories.css',
   };
 
   const toggleTheme = (mode) => {
